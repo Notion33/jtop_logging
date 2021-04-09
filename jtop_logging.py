@@ -73,7 +73,14 @@ if __name__ == "__main__":
                     print("Log at {time}".format(time=stats['time']))
                     if (len(cpu_usage) > 100):
                         plt.plot(cpu_usage)
-                        plt.savefig('./fig2.png',dpi=300)
+                        plt.title('Sample_CPU_Usage')
+                        plt.savefig('./fig_cpu.png',dpi=300)
+                        plt.plot(gpu_usage)
+                        plt.title('Sample_GPU_Usage')
+                        plt.savefig('./fig_gpu.png',dpi=300)
+                        plt.plot(ram_usage)
+                        plt.title('Sample_RAM_Usage')
+                        plt.savefig('./fig_ram.png',dpi=300)
                         print("save is done")
                         break
     except JtopException as e:
